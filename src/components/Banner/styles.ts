@@ -1,3 +1,4 @@
+import { Container as TagContainer } from "./../Tag/styles";
 import styled from "styled-components";
 import BannerImg from "../../assets/images/banner-homem-aranha.png";
 
@@ -9,7 +10,19 @@ export const Container = styled.div`
   height: 560px;
   display: block;
   font-weight: bold;
-  padding-top: 340px;
+
+  .container {
+    position: relative;
+    padding-top: 340px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  ${TagContainer} {
+    position: absolute;
+    top: 32px;
+  }
 `;
 
 export const Title = styled.h2`
