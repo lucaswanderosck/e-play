@@ -1,12 +1,13 @@
+import { Banner } from "./components/Banner";
 import { Header } from "./components/Header";
-import { Container } from "./styles/GlobalStyles";
 
 export const App = () => {
   return (
     <>
-      <Container>
+      <div className="container">
         <Header />
-      </Container>
+      </div>
+      <Banner />
     </>
   );
 };
