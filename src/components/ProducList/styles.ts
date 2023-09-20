@@ -1,10 +1,10 @@
-import { Container as CardContainer } from "./../Product/styles";
+import { Container as CardContainer } from "../Product/styles";
 import styled from "styled-components";
 
 import { Props } from ".";
 import { colors } from "../../styles/GlobalStyles";
 
-export const Container = styled.section<Omit<Props, "title">>`
+export const Container = styled.section<Omit<Props, "title" | "games">>`
   padding: 32px 0;
   background-color: ${(props) =>
     props.background === "black" ? colors.black : colors.gray};
