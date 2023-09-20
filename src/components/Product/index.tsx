@@ -1,5 +1,5 @@
 import { Tag } from "../Tag";
-import { Container, Description, Infos, Title } from "./styles";
+import { Container, Description, Infos, Title, ImgZoomWrapper } from "./styles";
 
 type Props = {
   title: string;
@@ -20,7 +20,9 @@ export const Product = ({
 }: Props) => {
   return (
     <Container>
-      <img src={image} alt={title} />
+      <ImgZoomWrapper>
+        <img src={image} alt={title} />
+      </ImgZoomWrapper>
       <Infos>
         {infos.map((info) => (
           <Tag key={info}>{info}</Tag>

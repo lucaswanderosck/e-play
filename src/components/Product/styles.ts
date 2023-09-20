@@ -11,13 +11,6 @@ export const Container = styled.div`
   ${TagContainer} {
     margin-right: 8px;
   }
-
-  > img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
 `;
 
 export const Title = styled.h3`
@@ -40,4 +33,28 @@ export const Infos = styled.div`
   position: absolute;
   top: 16px;
   right: 16px;
+`;
+
+export const ImgZoomWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+    filter: blur(0.5px);
+  }
+
+  &:hover {
+    > img {
+      transform: scale(1.15);
+      filter: blur(0);
+    }
+  }
 `;
