@@ -1,7 +1,6 @@
 import { Banner } from "./components/Banner";
 import { Header } from "./components/Header";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Product } from "./components/Product";
 import { ProductsList } from "./components/ProducsList";
 
 const routes = createBrowserRouter([
@@ -10,7 +9,8 @@ const routes = createBrowserRouter([
     element: (
       <>
         <Banner />
-        <ProductsList title="Promoções" background="gray"/>
+        <ProductsList title="Promoções" background="gray" />
+        <ProductsList title="Em breve" background="black" />
       </>
     ),
   },

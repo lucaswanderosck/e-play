@@ -4,6 +4,7 @@ import { colors } from "../../styles/GlobalStyles";
 
 export const Container = styled.div`
   background-color: ${colors.gray};
+  position: relative;
   border-radius: 8px;
   padding: 8px;
 
@@ -24,4 +25,10 @@ export const Description = styled.p`
   line-height: 22px;
   display: block;
   margin-top: 16px;
+`;
+
+export const Infos = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 16px;
 `;
