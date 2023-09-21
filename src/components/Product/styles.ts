@@ -7,6 +7,8 @@ export const Container = styled.div`
   position: relative;
   border-radius: 8px;
   padding: 8px;
+  cursor: pointer;
+  transition: all 0.35s;
 
   ${TagContainer} {
     margin-right: 8px;
@@ -41,7 +43,6 @@ export const ImgZoomWrapper = styled.div`
   height: 250px;
   border-radius: 8px;
   overflow: hidden;
-  cursor: pointer;
 
   > img {
     width: 100%;
@@ -49,12 +50,5 @@ export const ImgZoomWrapper = styled.div`
     object-fit: cover;
     transition: all 0.2s ease-in-out;
     filter: blur(0.5px);
-  }
-
-  &:hover {
-    > img {
-      transform: scale(1.15);
-      filter: blur(0);
-    }
   }
 `;

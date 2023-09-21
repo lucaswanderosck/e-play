@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Rotas } from "./routes";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   return (
@@ -9,6 +10,7 @@ export const App = () => {
         <Header />
       </div>
       <Rotas />
+      <Footer />
     </BrowserRouter>
   );
 };

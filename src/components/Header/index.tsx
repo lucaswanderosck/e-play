@@ -8,7 +8,9 @@ export const Header = () => {
   return (
     <Container>
       <div>
-        <img src={logo} alt="eplay" />
+        <Link to="/">
+          <img src={logo} alt="eplay" />
+        </Link>
         <nav>
           <Links>
             <LinkItem>

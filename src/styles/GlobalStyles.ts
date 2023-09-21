@@ -4,6 +4,7 @@ export const colors = {
   white: "#eee",
   black: "#111",
   gray: "#333",
+  lightGray: "#a3a3a3",
   green: "#10ac84",
 };
 
@@ -26,5 +27,13 @@ export const GlobalStyles = createGlobalStyle`
       max-width: 1024px;
       width: 100%;
       margin: 0 auto;
+
+      @media (max-width: 1024px) {
+        width: 90%;
+      }
+
+      @media (max-width: 768px) {
+        width: 80%;
+      }
     }
   `;
