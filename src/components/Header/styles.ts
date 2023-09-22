@@ -1,5 +1,5 @@
+import { colors } from "./../../styles/GlobalStyles";
 import styled from "styled-components";
-import { colors } from "../../styles/GlobalStyles";
 
 export const Container = styled.header`
   background-color: ${colors.gray};
@@ -19,6 +19,10 @@ export const Container = styled.header`
     color: ${colors.white};
     text-decoration: none;
     font-weight: bold;
+
+    &:hover {
+      color: ${colors.lightGray};
+    }
   }
 `;
 
