@@ -8,6 +8,7 @@ type Props = {
   description: string;
   image: string;
   infos: string[];
+  id: number;
 };
 
 export const Product = ({
@@ -17,9 +18,16 @@ export const Product = ({
   infos,
   system,
   title,
+  id
 }: Props) => {
+  const getDescription = (description: string) => {
+    if (description.length > 90) {
+      return `${description.substring(0, 90)}...`;
+    }
+    return description;
+  };
   return (
-    <Container>
+    <Container to={`/produto/${id}`}>
       <ImgZoomWrapper>
         <img src={image} alt={title} />
       </ImgZoomWrapper>
@@ -31,7 +39,7 @@ export const Product = ({
       <Title>{title}</Title>
       <Tag>{category}</Tag>
       <Tag>{system}</Tag>
-      <Description>{description}</Description>
+      <Description>{getDescription(description)}</Description>
     </Container>
   );
 };

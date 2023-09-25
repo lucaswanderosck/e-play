@@ -1,27 +1,38 @@
+import { Game } from "../../pages/Home";
 import { Button } from "../Button";
+import { formatPrice } from "../ProducList";
 import { Tag } from "../Tag";
 import { Container, Infos } from "./styles";
 
-export const Hero = () => {
+type Props = {
+  game: Game;
+};
+
+export const Hero = ({ game }: Props) => {
   return (
     <Container>
       <div className="container">
         <div>
-          <Tag>RPG</Tag>
-          <Tag>FPS</Tag>
+          <Tag>{game.details.category}</Tag>
+          <Tag>{game.details.system}</Tag>
         </div>
         <Infos>
-          <h2>Hogwarts Legacy</h2>
+          <h2>{game.name}</h2>
           <p>
-            <span>de R$ 249,00</span> por R$ 189,00
+            {game.prices.discount && (
+              <span>De {formatPrice(game.prices.old)}</span>
+            )}
+            {game.prices.current && <>Por {formatPrice(game.prices.current)}</>}
           </p>
-          <Button
-            type="button"
-            variation="primary"
-            title="clique aqui para adicionar ao carrnho"
-          >
-            Adicionar ao carrinho
-          </Button>
+          {game.prices.current && (
+            <Button
+              type="button"
+              variation="primary"
+              title="clique aqui para adicionar ao carrnho"
+            >
+              Adicionar ao carrinho
+            </Button>
+          )}
         </Infos>
       </div>
     </Container>

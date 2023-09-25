@@ -23,7 +23,7 @@ export const Container = styled.section<Omit<Props, "title" | "games">>`
 export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 24px;
+  gap: 24px;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
@@ -41,16 +41,17 @@ export const List = styled.ul`
   }
 
   &:hover {
-    > :not(:hover) {
-      opacity: 0.5;
-      transform: scale(0.9);
-      transition: 0.35s;
-    }
-
-    > :hover {
-      img {
-        transform: scale(1.1);
-        filter: blur(0);
+    li {
+      > :not(:hover) {
+        opacity: 0.5;
+        transform: scale(0.9);
+        transition: 0.35s;
+      }
+      > :hover {
+        img {
+          transform: scale(1.1);
+          filter: blur(0);
+        }
       }
     }
   }

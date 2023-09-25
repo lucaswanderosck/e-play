@@ -1,14 +1,18 @@
 import { Container as TagContainer } from "./../Tag/styles";
 import styled from "styled-components";
 import { colors } from "../../styles/GlobalStyles";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   background-color: ${colors.gray};
   position: relative;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   transition: all 0.35s;
+  text-decoration: none;
+  color: ${colors.white};
+  display: block;
 
   ${TagContainer} {
     margin-right: 8px;
@@ -23,7 +27,6 @@ export const Title = styled.h3`
 `;
 
 export const Description = styled.p`
-  text-align: justify;
   padding: 8px;
   font-size: 14px;
   line-height: 22px;
@@ -45,10 +48,10 @@ export const ImgZoomWrapper = styled.div`
   overflow: hidden;
 
   > img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all 0.2s ease-in-out;
-    filter: blur(0.5px);
   }
 `;

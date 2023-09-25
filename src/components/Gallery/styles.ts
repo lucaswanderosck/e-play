@@ -96,6 +96,7 @@ export const ModalContent = styled.div`
   iframe {
     display: block;
     max-width: 100%;
+    width: 100%;
   }
 
   iframe {

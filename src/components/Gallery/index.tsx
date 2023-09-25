@@ -3,35 +3,21 @@ import { Section } from "../Section";
 import { Action, Items, Modal, ModalContent } from "./styles";
 import { LuPlayCircle, LuZoomIn, LuX } from "react-icons/lu";
 
-import rogwarts from "../../assets/images/hogwarts.png";
 import { useState } from "react";
 
-interface GalleryItem {
-  type: "image" | "video";
-  url: string;
-}
-
-const mock: GalleryItem[] = [
-  {
-    type: "image",
-    url: rogwarts,
-  },
-  {
-    type: "video",
-    url: "https://www.youtube.com/embed/1O6Qstncpnc?si=1KLPBrQpcHPKdWpn",
-  },
-];
+import { GalleryItem } from "../../pages/Home";
 
 type Props = {
   defaultCover: string;
   name: string;
+  itemsGallery: GalleryItem[];
 };
 
 interface ModalState extends GalleryItem {
   isVisible: boolean;
 }
 
-export const Gallery = ({ defaultCover, name }: Props) => {
+export const Gallery = ({ defaultCover, name, itemsGallery }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: "image",
@@ -64,7 +50,7 @@ export const Gallery = ({ defaultCover, name }: Props) => {
     <>
       <Section title="Galeria" background="black">
         <Items>
-          {mock.map((media) => {
+          {itemsGallery.map((media) => {
             return (
               <li
                 key={media.url}
@@ -105,3 +91,4 @@ export const Gallery = ({ defaultCover, name }: Props) => {
     </>
   );
 };
+

@@ -29,9 +29,11 @@ export const Button = ({
       </Container>
     );
   }
-  return (
-    <ButtonLink as="a" to={to as string} title={title}>
-      {children}
-    </ButtonLink>
-  );
+  if (type === "link") {
+    return (
+      <ButtonLink to={to as string} title={title}>
+        {children}
+      </ButtonLink>
+    );
+  }
 };
