@@ -1,10 +1,14 @@
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 import { Hero } from "../../components/Hero";
 import { Section } from "../../components/Section";
 
+import { Gallery } from "../../components/Gallery";
+
+import rogwarts from "../../assets/images/hogwarts.png";
+
 export const ProductPage = () => {
-  const { id } = useParams();
+  // const { id } = useParams();
 
   return (
     <>
@@ -35,9 +39,7 @@ export const ProductPage = () => {
           jogo.
         </p>
       </Section>
-      <Section title="Galeria" background="black">
-        <div>fotos</div>
-      </Section>
+      <Gallery name="hogwarts legacy" defaultCover={rogwarts} />
     </>
   );
 };
