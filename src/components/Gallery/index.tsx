@@ -4,12 +4,12 @@ import { Action, Items, Modal, ModalContent } from "./styles";
 import { LuPlayCircle, LuZoomIn, LuX } from "react-icons/lu";
 
 import rogwarts from "../../assets/images/hogwarts.png";
-import rogwarstBig from "../../assets/images/hogwatrs-big.png";
+import { useState } from "react";
 
-type GalleryItem = {
+interface GalleryItem {
   type: "image" | "video";
   url: string;
-};
+}
 
 const mock: GalleryItem[] = [
   {
@@ -27,7 +27,17 @@ type Props = {
   name: string;
 };
 
+interface ModalState extends GalleryItem {
+  isVisible: boolean;
+}
+
 export const Gallery = ({ defaultCover, name }: Props) => {
+  const [modal, setModal] = useState<ModalState>({
+    isVisible: false,
+    type: "image",
+    url: "",
+  });
+
   const getMediaCover = (media: GalleryItem) => {
     if (media.type === "image") {
       return defaultCover;
@@ -42,13 +52,30 @@ export const Gallery = ({ defaultCover, name }: Props) => {
     return <LuPlayCircle size={40} />;
   };
 
+  const closeModal = () => {
+    setModal({
+      isVisible: false,
+      type: "image",
+      url: "",
+    });
+  };
+
   return (
     <>
       <Section title="Galeria" background="black">
         <Items>
           {mock.map((media) => {
             return (
-              <li key={media.url}>
+              <li
+                key={media.url}
+                onClick={() => {
+                  setModal({
+                    isVisible: true,
+                    type: media.type,
+                    url: media.url,
+                  });
+                }}
+              >
                 <img src={getMediaCover(media)} alt={name} />
                 <Action>{getMediaIcon(media)}</Action>
               </li>
@@ -56,15 +83,24 @@ export const Gallery = ({ defaultCover, name }: Props) => {
           })}
         </Items>
       </Section>
-      <Modal>
+      <Modal className={modal.isVisible ? "active" : ""}>
         <ModalContent className="container">
           <header>
             <h4>{name}</h4>
-            <LuX size={40} />
+            <LuX size={40} onClick={closeModal} />
           </header>
-          <img src={rogwarstBig} alt="" />
+          {modal.type === "image" ? (
+            <img src={modal.url} alt={name} />
+          ) : (
+            <iframe
+              src={modal.url}
+              title={name}
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          )}
         </ModalContent>
-        <div className="overlay"></div>
+        <div className="overlay" onClick={closeModal}></div>
       </Modal>
     </>
   );

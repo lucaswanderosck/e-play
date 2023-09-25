@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/GlobalStyles";
+import "animate.css";
 
 export const Action = styled.div`
   position: absolute;
@@ -50,9 +51,15 @@ export const Modal = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+
+  &.active {
+    animation: fadeIn;
+    animation-duration: 1s;
+    display: flex;
+  }
 
   .overlay {
     position: fixed;
@@ -79,9 +86,20 @@ export const ModalContent = styled.div`
       font-size: 18px;
       font-weight: bold;
     }
+
+    svg {
+      cursor: pointer;
+    }
   }
 
-  img {
+  img,
+  iframe {
     display: block;
+    max-width: 100%;
+  }
+
+  iframe {
+    height: 480px;
+    width: 100%;
   }
 `;
