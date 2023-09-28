@@ -66,10 +66,7 @@ export const Gallery = ({ items, defaultCover, name }: Props) => {
                 alt={`Mídia ${index + 1} de ${name}`}
               />
               <Action>
-                <img
-                  src={getMediaIcon(media)}
-                  alt="Clique para maximar a mídia"
-                />
+                {getMediaIcon(media)}
               </Action>
             </Item>
           ))}

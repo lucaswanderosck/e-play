@@ -22,12 +22,12 @@ export type Game = {
     system: string;
     developer: string;
     publisher: string;
-    language: string[];
+    languages: string[];
   };
   media: {
     cover: string;
     thumbnail: string;
-    galery: GalleryItem[];
+    gallery: GalleryItem[];
   };
 };
 

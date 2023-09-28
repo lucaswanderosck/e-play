@@ -39,15 +39,15 @@ export const ProductPage = () => {
           <b>Editora: </b>
           {game.details.publisher}
           <br />
-          <b>Idiomas:</b>O jogo oferece suporte a diversos idiomas, incluindo
-          {/* {game.details.language.join(", ")}. As opções de áudio e legendas */}
+          <b>Idiomas: </b>O jogo oferece suporte a diversos idiomas, incluindo:{" "}
+          {game.details.languages.join(", ")}. As opções de áudio e legendas
           podem ser ajustadas nas configurações do jogo.
         </p>
       </Section>
       <Gallery
         name={game.name}
         defaultCover={game.media.cover}
-        items={game.media.galery}
+        items={game.media.gallery}
       />
     </>
   );
