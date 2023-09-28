@@ -10,7 +10,7 @@ type Props = {
 
 export const Hero = ({ game }: Props) => {
   return (
-    <Container>
+    <Container style={{ backgroundImage: `url(${game.media.cover})` }}>
       <div className="container">
         <div>
           <Tag>{game.details.category}</Tag>

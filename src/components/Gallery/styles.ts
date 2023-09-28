@@ -24,22 +24,22 @@ export const Items = styled.ul`
   display: flex;
   gap: 16px;
   margin-top: 2rem;
+`;
 
-  > li {
-    position: relative;
+export const Item = styled.li`
+  position: relative;
 
-    > img {
-      border: 2px solid ${colors.white};
-      border-radius: 8px;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-    }
+  > img {
+    border: 2px solid ${colors.white};
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
 
-    &:hover {
-      ${Action} {
-        opacity: 1;
-      }
+  &:hover {
+    ${Action} {
+      opacity: 1;
     }
   }
 `;

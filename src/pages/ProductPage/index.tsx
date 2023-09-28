@@ -47,7 +47,7 @@ export const ProductPage = () => {
       <Gallery
         name={game.name}
         defaultCover={game.media.cover}
-        itemsGallery={game.media.galery}
+        items={game.media.galery}
       />
     </>
   );

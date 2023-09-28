@@ -1,11 +1,9 @@
 import { Container as TagContainer } from "./../Tag/styles";
 import styled from "styled-components";
 
-import backgroundHero from "../../assets/images/fundo-hogwarts.png";
 import { colors } from "../../styles/GlobalStyles";
 
 export const Container = styled.div`
-  background-image: url(${backgroundHero});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

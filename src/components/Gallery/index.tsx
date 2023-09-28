@@ -1,23 +1,22 @@
-import { Section } from "../Section";
-
-import { Action, Items, Modal, ModalContent } from "./styles";
-import { LuPlayCircle, LuZoomIn, LuX } from "react-icons/lu";
-
 import { useState } from "react";
 
+import { Action, Items, Item, Modal, ModalContent } from "./styles";
+
+import { Section } from "../Section";
 import { GalleryItem } from "../../pages/Home";
+import { LuPlayCircle, LuZoomIn, LuX } from "react-icons/lu";
 
 type Props = {
+  items: GalleryItem[];
   defaultCover: string;
   name: string;
-  itemsGallery: GalleryItem[];
 };
 
 interface ModalState extends GalleryItem {
   isVisible: boolean;
 }
 
-export const Gallery = ({ defaultCover, name, itemsGallery }: Props) => {
+export const Gallery = ({ items, defaultCover, name }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: "image",
@@ -25,7 +24,8 @@ export const Gallery = ({ defaultCover, name, itemsGallery }: Props) => {
   });
 
   const getMediaCover = (media: GalleryItem) => {
-    if (media.type === "image") {
+    if (media.type === "image") return media.url;
+    {
       return defaultCover;
     }
   };
@@ -50,23 +50,29 @@ export const Gallery = ({ defaultCover, name, itemsGallery }: Props) => {
     <>
       <Section title="Galeria" background="black">
         <Items>
-          {itemsGallery.map((media) => {
-            return (
-              <li
-                key={media.url}
-                onClick={() => {
-                  setModal({
-                    isVisible: true,
-                    type: media.type,
-                    url: media.url,
-                  });
-                }}
-              >
-                <img src={getMediaCover(media)} alt={name} />
-                <Action>{getMediaIcon(media)}</Action>
-              </li>
-            );
-          })}
+          {items.map((media, index) => (
+            <Item
+              key={media.url}
+              onClick={() => {
+                setModal({
+                  isVisible: true,
+                  type: media.type,
+                  url: media.url,
+                });
+              }}
+            >
+              <img
+                src={getMediaCover(media)}
+                alt={`Mídia ${index + 1} de ${name}`}
+              />
+              <Action>
+                <img
+                  src={getMediaIcon(media)}
+                  alt="Clique para maximar a mídia"
+                />
+              </Action>
+            </Item>
+          ))}
         </Items>
       </Section>
       <Modal className={modal.isVisible ? "active" : ""}>
@@ -91,4 +97,3 @@ export const Gallery = ({ defaultCover, name, itemsGallery }: Props) => {
     </>
   );
 };
-
