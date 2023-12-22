@@ -18,8 +18,10 @@ export const Container = styled.button<Props>`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: transparent;
-    color: ${colors.green};
+    background-color: ${(props) =>
+      props.variation === "primary" ? "transparent" : colors.green};
+    color: ${(props) =>
+      props.variation === "primary" ? colors.green : colors.white};
   }
 `;
 
@@ -33,4 +35,10 @@ export const ButtonLink = styled(Link)`
   text-decoration: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: ${colors.white};
+    color: ${colors.gray};
+  }
 `;
