@@ -1,5 +1,5 @@
 import { Tag } from "../Tag";
-import { Container, Description, Infos, Title, ImgZoomWrapper } from "./styles";
+import { Container, Description, ImgZoomWrapper, Infos, Title } from "./styles";
 
 type Props = {
   title: string;
@@ -18,7 +18,7 @@ export const Product = ({
   infos,
   system,
   title,
-  id
+  id,
 }: Props) => {
   const getDescription = (description: string) => {
     if (description.length > 90) {

@@ -7,7 +7,7 @@ type CartState = {
 
 const initialState: CartState = {
   items: [],
-}
+};
 
 const cartSlice = createSlice({
   name: "cart",

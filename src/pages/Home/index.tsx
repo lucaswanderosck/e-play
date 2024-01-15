@@ -1,7 +1,7 @@
 import { Banner } from "../../components/Banner";
 import { ProductsList } from "../../components/ProducList";
 
-import { useGetSoonQuery, useGetOnSaleGameQuery } from "../../services/api";
+import { useGetOnSaleGameQuery, useGetSoonQuery } from "../../services/api";
 
 export interface GalleryItem {
   type: "image" | "video";

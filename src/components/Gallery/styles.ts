@@ -1,6 +1,6 @@
+import "animate.css";
 import styled from "styled-components";
 import { colors } from "../../styles/GlobalStyles";
-import "animate.css";
 
 export const Action = styled.div`
   position: absolute;

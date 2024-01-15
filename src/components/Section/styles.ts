@@ -19,9 +19,9 @@ export const Container = styled.section<Omit<Props, "title" | "games">>`
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 24px;
-  }    
+  }
 
-  p{
+  p {
     font-size: 14px;
     line-height: 22px;
     max-width: 640px;

@@ -1,10 +1,10 @@
 import { ProductsList } from "../../components/ProducList";
 import {
   useGetActionGamesQuery,
-  useGetRpgGamesQuery,
-  useGetSportsGamesQuery,
-  useGetSimulationGamesQuery,
   useGetFightGamesQuery,
+  useGetRpgGamesQuery,
+  useGetSimulationGamesQuery,
+  useGetSportsGamesQuery,
 } from "../../services/api";
 
 export const Categories = () => {

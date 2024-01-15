@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../styles/GlobalStyles";
-import { Link } from "react-router-dom";
 
 import { Props } from ".";
 

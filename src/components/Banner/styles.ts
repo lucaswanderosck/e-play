@@ -1,5 +1,5 @@
-import { Container as TagContainer } from "./../Tag/styles";
 import styled from "styled-components";
+import { Container as TagContainer } from "./../Tag/styles";
 
 export const Container = styled.div`
   background-size: cover;

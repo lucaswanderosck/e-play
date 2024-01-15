@@ -1,7 +1,6 @@
 import { Container, FooterSection } from "./styles";
 
 export const Footer = () => {
-
   const currentYear = new Date().getFullYear();
 
   return (

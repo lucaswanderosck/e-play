@@ -1,7 +1,7 @@
-import { Container as TagContainer } from "./../Tag/styles";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../styles/GlobalStyles";
-import { Link } from "react-router-dom";
+import { Container as TagContainer } from "./../Tag/styles";
 
 export const Container = styled(Link)`
   background-color: ${colors.gray};

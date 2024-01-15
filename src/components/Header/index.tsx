@@ -1,8 +1,8 @@
-import { Container, LinkCart, LinkItem, Links } from "./styles";
 import { FaShoppingCart } from "react-icons/fa";
+import { Container, LinkCart, LinkItem, Links } from "./styles";
 
-import logo from "../../assets/images/logo.svg";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo.svg";
 
 export const Header = () => {
   return (

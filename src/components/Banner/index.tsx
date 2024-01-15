@@ -1,6 +1,6 @@
 import { Button } from "../Button";
 import { Tag } from "../Tag";
-import { Container, Title, Prices } from "./styles";
+import { Container, Prices, Title } from "./styles";
 
 import { formatPrice } from "../ProducList";
 

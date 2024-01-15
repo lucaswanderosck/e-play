@@ -1,5 +1,5 @@
-import { Container as CardContainer } from "../Product/styles";
 import styled from "styled-components";
+import { Container as CardContainer } from "../Product/styles";
 
 import { Props } from ".";
 import { colors } from "../../styles/GlobalStyles";

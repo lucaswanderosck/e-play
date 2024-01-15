@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Action, Items, Item, Modal, ModalContent } from "./styles";
+import { Action, Item, Items, Modal, ModalContent } from "./styles";
 
-import { Section } from "../Section";
+import { LuPlayCircle, LuX, LuZoomIn } from "react-icons/lu";
 import { GalleryItem } from "../../pages/Home";
-import { LuPlayCircle, LuZoomIn, LuX } from "react-icons/lu";
+import { Section } from "../Section";
 
 type Props = {
   items: GalleryItem[];
@@ -65,9 +65,7 @@ export const Gallery = ({ items, defaultCover, name }: Props) => {
                 src={getMediaCover(media)}
                 alt={`Mídia ${index + 1} de ${name}`}
               />
-              <Action>
-                {getMediaIcon(media)}
-              </Action>
+              <Action>{getMediaIcon(media)}</Action>
             </Item>
           ))}
         </Items>
