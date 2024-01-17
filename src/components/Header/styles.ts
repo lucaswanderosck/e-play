@@ -35,8 +35,9 @@ export const LinkItem = styled.li`
   margin-right: 16px;
 `;
 
-export const LinkCart = styled.a`
+export const ButtonCart = styled.a`
   display: flex;
+  cursor: pointer;
 
   > svg {
     margin-left: 16px;

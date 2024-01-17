@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import { Game } from "../../pages/Home";
+import { addItemToCart, openCart } from "../../store/reducer/cart";
 import { Button } from "../Button";
 import { formatPrice } from "../ProducList";
 import { Tag } from "../Tag";
@@ -9,6 +11,13 @@ type Props = {
 };
 
 export const Hero = ({ game }: Props) => {
+  const dispatch = useDispatch();
+
+  const addtoCart = () => {
+    dispatch(addItemToCart(game));
+    dispatch(openCart());
+  };
+
   return (
     <Container style={{ backgroundImage: `url(${game.media.cover})` }}>
       <div className="container">
@@ -28,7 +37,8 @@ export const Hero = ({ game }: Props) => {
             <Button
               type="button"
               variation="primary"
-              title="clique aqui para adicionar ao carrnho"
+              title="clique aqui para adicionar ao carrinho"
+              onClick={addtoCart}
             >
               Adicionar ao carrinho
             </Button>

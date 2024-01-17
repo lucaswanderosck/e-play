@@ -7,7 +7,7 @@ export const api = createApi({
   }),
   endpoints: (builder) => ({
     getFeaturedGame: builder.query<Game, void>({
-      query: () => "detaque",
+      query: () => "destaque",
     }),
     getOnSaleGame: builder.query<Game[], void>({
       query: () => "promocoes",

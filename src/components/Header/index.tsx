@@ -1,10 +1,21 @@
 import { FaShoppingCart } from "react-icons/fa";
-import { Container, LinkCart, LinkItem, Links } from "./styles";
+import { ButtonCart, Container, LinkItem, Links } from "./styles";
 
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 
+import { useDispatch, useSelector } from "react-redux";
+import { rootReducer } from "../../store";
+import { openCart } from "../../store/reducer/cart";
+
 export const Header = () => {
+  const dispatch = useDispatch();
+  const { items } = useSelector((state: rootReducer) => state.cart);
+
+  const openCartHandler = () => {
+    dispatch(openCart());
+  };
+
   return (
     <Container>
       <div>
@@ -25,10 +36,10 @@ export const Header = () => {
           </Links>
         </nav>
       </div>
-      <LinkCart href="#">
-        0 - produto(s)
+      <ButtonCart onClick={openCartHandler}>
+        {items.length} - produto(s)
         <FaShoppingCart size={20} />
-      </LinkCart>
+      </ButtonCart>
     </Container>
   );
 };
