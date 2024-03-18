@@ -8,6 +8,12 @@ export const colors = {
   green: '#10ac84',
 }
 
+export const breakpoints = {
+  mobile: '375px',
+  tablet: '768px',
+  desktop: '1024px',
+}
+
 export const GlobalStyles = createGlobalStyle`
     * {
       margin: 0;
@@ -28,11 +34,11 @@ export const GlobalStyles = createGlobalStyle`
       width: 100%;
       margin: 0 auto;
 
-      @media (max-width: 1024px) {
-        width: 90%;
+      @media (max-width: ${breakpoints.desktop}) {
+        max-width: 80%;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: ${breakpoints.tablet}) {
         width: 80%;
       }
     }

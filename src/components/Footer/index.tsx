@@ -1,4 +1,4 @@
-import { Container, FooterSection } from './styles'
+import { Container, FooterSection, LinkItem } from './styles'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -10,25 +10,19 @@ export const Footer = () => {
           <h4>Categorias</h4>
           <ul>
             <li>
-              <a href="#">Ação</a>
+              <LinkItem to="/categorias#action">Ação</LinkItem>
             </li>
             <li>
-              <a href="#">Aventura</a>
+              <LinkItem to="/categorias#fps">FPS</LinkItem>
             </li>
             <li>
-              <a href="#">FPS</a>
+              <LinkItem to="/categorias#rpg">RPG</LinkItem>
             </li>
             <li>
-              <a href="#">RPG</a>
+              <LinkItem to="/categorias#fight">Luta</LinkItem>
             </li>
             <li>
-              <a href="#">Estratégia</a>
-            </li>
-            <li>
-              <a href="#">Esportes</a>
-            </li>
-            <li>
-              <a href="#">Simulação</a>
+              <LinkItem to="/categorias#sports">Esportes</LinkItem>
             </li>
           </ul>
         </FooterSection>
@@ -36,13 +30,10 @@ export const Footer = () => {
           <h4>Acesso rápido</h4>
           <ul>
             <li>
-              <a href="#">Novidades</a>
+              <LinkItem to="/#on-sale">Promoções</LinkItem>
             </li>
             <li>
-              <a href="#">Promoções</a>
-            </li>
-            <li>
-              <a href="#">Em breve</a>
+              <LinkItem to="/#coming-soon">Em breve</LinkItem>
             </li>
           </ul>
         </FooterSection>

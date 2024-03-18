@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from './../../styles/GlobalStyles'
+import { breakpoints, colors } from './../../styles/GlobalStyles'
 
 export const Container = styled.header`
   background-color: ${colors.gray};
@@ -23,6 +23,10 @@ export const Container = styled.header`
     &:hover {
       color: ${colors.lightGray};
     }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
   }
 `
 

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Container as CardContainer } from '../Product/styles'
 
 import { Props } from '.'
-import { colors } from '../../styles/GlobalStyles'
+import { breakpoints, colors } from '../../styles/GlobalStyles'
 
 export const Container = styled.section<Omit<Props, 'title' | 'games'>>`
   padding: 32px 0;
@@ -25,8 +25,8 @@ export const List = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: repeat(2, 1fr);
     row-gap: 24px;
   }
 

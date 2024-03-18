@@ -1,7 +1,8 @@
+import { HashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
 import { colors } from '../../styles/GlobalStyles'
 
-export const Container = styled.div`
+export const Container = styled.footer`
   background-color: ${colors.gray};
   padding: 32px 0;
   font-size: 14px;
@@ -20,15 +21,16 @@ export const FooterSection = styled.div`
     margin-top: 16px;
 
     > li {
-      > a {
-        color: ${colors.lightGray};
-        text-decoration: none;
-        margin-right: 8px;
-
-        &:hover {
-          color: ${colors.white};
-        }
-      }
     }
+  }
+`
+
+export const LinkItem = styled(HashLink)`
+  color: ${colors.lightGray};
+  text-decoration: none;
+  margin-right: 8px;
+
+  &:hover {
+    color: ${colors.white};
   }
 `

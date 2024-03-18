@@ -23,6 +23,7 @@ export const Items = styled.ul`
   display: flex;
   gap: 16px;
   margin-top: 2rem;
+  flex-wrap: wrap;
 `
 
 export const Item = styled.li`
