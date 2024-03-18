@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "./../../styles/GlobalStyles";
+import styled from 'styled-components'
+import { colors } from './../../styles/GlobalStyles'
 
 export const Container = styled.header`
   background-color: ${colors.gray};
@@ -24,16 +24,16 @@ export const Container = styled.header`
       color: ${colors.lightGray};
     }
   }
-`;
+`
 
 export const Links = styled.ul`
   display: flex;
   margin-left: 40px;
-`;
+`
 
 export const LinkItem = styled.li`
   margin-right: 16px;
-`;
+`
 
 export const ButtonCart = styled.a`
   display: flex;
@@ -42,4 +42,4 @@ export const ButtonCart = styled.a`
   > svg {
     margin-left: 16px;
   }
-`;
+`

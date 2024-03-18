@@ -1,12 +1,12 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
-  white: "#eee",
-  black: "#111",
-  gray: "#333",
-  lightGray: "#a3a3a3",
-  green: "#10ac84",
-};
+  white: '#eee',
+  black: '#111',
+  gray: '#333',
+  lightGray: '#a3a3a3',
+  green: '#10ac84',
+}
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -36,4 +36,4 @@ export const GlobalStyles = createGlobalStyle`
         width: 80%;
       }
     }
-  `;
+  `

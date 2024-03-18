@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Container as TagContainer } from "./../Tag/styles";
+import styled from 'styled-components'
+import { Container as TagContainer } from './../Tag/styles'
 
 export const Container = styled.div`
   background-size: cover;
@@ -26,19 +26,19 @@ export const Container = styled.div`
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     top: 0;
     left: 0;
   }
-`;
+`
 
 export const Title = styled.h2`
   font-size: 36px;
   max-width: 450px;
-`;
+`
 
 export const Prices = styled.p`
   font-size: 24px;
@@ -47,4 +47,4 @@ export const Prices = styled.p`
   > span {
     text-decoration: line-through;
   }
-`;
+`

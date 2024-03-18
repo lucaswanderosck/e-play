@@ -1,22 +1,22 @@
-import { useDispatch } from "react-redux";
-import { Game } from "../../pages/Home";
-import { addItemToCart, openCart } from "../../store/reducer/cart";
-import { Button } from "../Button";
-import { formatPrice } from "../ProducList";
-import { Tag } from "../Tag";
-import { Container, Infos } from "./styles";
+import { useDispatch } from 'react-redux'
+import { Game } from '../../pages/Home'
+import { addItemToCart, openCart } from '../../store/reducers/cart'
+import { formatPrice } from '../../utils/formatters'
+import { Button } from '../Button'
+import { Tag } from '../Tag'
+import { Container, Infos } from './styles'
 
 type Props = {
-  game: Game;
-};
+  game: Game
+}
 
 export const Hero = ({ game }: Props) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const addtoCart = () => {
-    dispatch(addItemToCart(game));
-    dispatch(openCart());
-  };
+    dispatch(addItemToCart(game))
+    dispatch(openCart())
+  }
 
   return (
     <Container style={{ backgroundImage: `url(${game.media.cover})` }}>
@@ -46,5 +46,5 @@ export const Hero = ({ game }: Props) => {
         </Infos>
       </div>
     </Container>
-  );
-};
+  )
+}

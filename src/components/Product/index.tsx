@@ -1,15 +1,15 @@
-import { Tag } from "../Tag";
-import { Container, Description, ImgZoomWrapper, Infos, Title } from "./styles";
+import { Tag } from '../Tag'
+import { Container, Description, ImgZoomWrapper, Infos, Title } from './styles'
 
 type Props = {
-  title: string;
-  category: string;
-  system: string;
-  description: string;
-  image: string;
-  infos: string[];
-  id: number;
-};
+  title: string
+  category: string
+  system: string
+  description: string
+  image: string
+  infos: string[]
+  id: number
+}
 
 export const Product = ({
   category,
@@ -22,10 +22,10 @@ export const Product = ({
 }: Props) => {
   const getDescription = (description: string) => {
     if (description.length > 90) {
-      return `${description.substring(0, 90)}...`;
+      return `${description.substring(0, 90)}...`
     }
-    return description;
-  };
+    return description
+  }
   return (
     <Container to={`/produto/${id}`}>
       <ImgZoomWrapper>
@@ -41,5 +41,5 @@ export const Product = ({
       <Tag>{system}</Tag>
       <Description>{getDescription(description)}</Description>
     </Container>
-  );
-};
+  )
+}

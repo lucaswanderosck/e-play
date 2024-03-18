@@ -1,10 +1,10 @@
-import { Container } from "./styles";
+import { Container } from './styles'
 
 export type Props = {
-  title: string;
-  background: "black" | "gray";
-  children: React.ReactNode;
-};
+  title: string
+  background: 'black' | 'gray'
+  children: React.ReactNode
+}
 
 export const Section = ({ title, background, children }: Props) => {
   return (
@@ -14,5 +14,5 @@ export const Section = ({ title, background, children }: Props) => {
         {children}
       </div>
     </Container>
-  );
-};
+  )
+}

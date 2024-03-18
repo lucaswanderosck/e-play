@@ -1,40 +1,40 @@
-import { Banner } from "../../components/Banner";
-import { ProductsList } from "../../components/ProducList";
+import { Banner } from '../../components/Banner'
+import { ProductsList } from '../../components/ProducList'
 
-import { useGetOnSaleGameQuery, useGetSoonQuery } from "../../services/api";
+import { useGetOnSaleGameQuery, useGetSoonQuery } from '../../services/api'
 
 export interface GalleryItem {
-  type: "image" | "video";
-  url: string;
+  type: 'image' | 'video'
+  url: string
 }
 
 export type Game = {
-  id: number;
-  name: string;
-  description: string;
-  releaseDate?: string;
+  id: number
+  name: string
+  description: string
+  releaseDate?: string
   prices: {
-    discount?: number;
-    old?: number;
-    current?: number;
-  };
+    discount?: number
+    old?: number
+    current?: number
+  }
   details: {
-    category: string;
-    system: string;
-    developer: string;
-    publisher: string;
-    languages: string[];
-  };
+    category: string
+    system: string
+    developer: string
+    publisher: string
+    languages: string[]
+  }
   media: {
-    cover: string;
-    thumbnail: string;
-    gallery: GalleryItem[];
-  };
-};
+    cover: string
+    thumbnail: string
+    gallery: GalleryItem[]
+  }
+}
 
 export const Home = () => {
-  const { data: soonGames } = useGetSoonQuery();
-  const { data: onSaleGames } = useGetOnSaleGameQuery();
+  const { data: soonGames } = useGetSoonQuery()
+  const { data: onSaleGames } = useGetOnSaleGameQuery()
 
   if (soonGames && onSaleGames) {
     return (
@@ -43,7 +43,7 @@ export const Home = () => {
         <ProductsList games={onSaleGames} title="Promoções" background="gray" />
         <ProductsList games={soonGames} title="Em breve" background="black" />
       </>
-    );
+    )
   }
-  return <h4>...carregando</h4>;
-};
+  return <h4>...carregando</h4>
+}

@@ -1,10 +1,10 @@
-import { LuX } from "react-icons/lu";
-import { useDispatch, useSelector } from "react-redux";
-import { rootReducer } from "../../store";
-import { closeCart, removeItemtoCart } from "../../store/reducer/cart";
-import { Button } from "../Button";
-import { formatPrice } from "../ProducList";
-import { Tag } from "../Tag";
+import { LuX } from 'react-icons/lu'
+import { useDispatch, useSelector } from 'react-redux'
+import { rootReducer } from '../../store'
+import { closeCart, removeItemtoCart } from '../../store/reducers/cart'
+import { formatPrice } from '../../utils/formatters'
+import { Button } from '../Button'
+import { Tag } from '../Tag'
 import {
   CartItem,
   CartSideBar,
@@ -12,29 +12,29 @@ import {
   Overlay,
   Prices,
   Quantity,
-} from "./styles";
+} from './styles'
 
 export const Cart = () => {
-  const { isOpen, items } = useSelector((state: rootReducer) => state.cart);
+  const { isOpen, items } = useSelector((state: rootReducer) => state.cart)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const closeCartHandler = () => {
-    dispatch(closeCart());
-  };
+    dispatch(closeCart())
+  }
 
   const removeToCart = (id: number) => {
-    dispatch(removeItemtoCart(id));
-  };
+    dispatch(removeItemtoCart(id))
+  }
 
   const getTotalPrices = () => {
     return items.reduce((acc, item) => {
-      return (acc += item.prices.current!);
-    }, 0);
-  };
+      return (acc += item.prices.current!)
+    }, 0)
+  }
 
   return (
-    <Container className={isOpen ? "is-open" : ""}>
+    <Container className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCartHandler} />
       <CartSideBar>
         <ul>
@@ -61,5 +61,5 @@ export const Cart = () => {
         </Button>
       </CartSideBar>
     </Container>
-  );
-};
+  )
+}

@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import { colors } from "../../styles/GlobalStyles";
+import styled from 'styled-components'
+import { colors } from '../../styles/GlobalStyles'
 
 export const Container = styled.div`
   background-color: ${colors.gray};
   padding: 32px 0;
   font-size: 14px;
-`;
+`
 
 export const FooterSection = styled.div`
   margin-bottom: 64px;
@@ -31,4 +31,4 @@ export const FooterSection = styled.div`
       }
     }
   }
-`;
+`

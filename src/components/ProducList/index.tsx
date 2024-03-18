@@ -1,38 +1,32 @@
-import { Game } from "../../pages/Home";
-import { Product } from "../Product";
-import { Container, List } from "./styles";
+import { Game } from '../../pages/Home'
+import { formatPrice } from '../../utils/formatters'
+import { Product } from '../Product'
+import { Container, List } from './styles'
 
 export type Props = {
-  title: string;
-  background: "gray" | "black";
-  games: Game[];
-};
-
-export const formatPrice = (price = 0) => {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(price);
-};
+  title: string
+  background: 'gray' | 'black'
+  games: Game[]
+}
 
 export const ProductsList = ({ background, title, games }: Props) => {
   const getGameTags = (game: Game) => {
-    const tags = [];
+    const tags = []
 
     if (game.releaseDate) {
-      tags.push(game.releaseDate);
+      tags.push(game.releaseDate)
     }
 
     if (game.prices.discount) {
-      tags.push(`${game.prices.discount}%`);
+      tags.push(`${game.prices.discount}%`)
     }
 
     if (game.prices.current) {
-      tags.push(formatPrice(game.prices.current));
+      tags.push(formatPrice(game.prices.current))
     }
 
-    return tags;
-  };
+    return tags
+  }
 
   return (
     <Container background={background}>
@@ -55,5 +49,5 @@ export const ProductsList = ({ background, title, games }: Props) => {
         </List>
       </div>
     </Container>
-  );
-};
+  )
+}

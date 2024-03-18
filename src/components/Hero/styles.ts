@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Container as TagContainer } from "./../Tag/styles";
+import styled from 'styled-components'
+import { Container as TagContainer } from './../Tag/styles'
 
-import { colors } from "../../styles/GlobalStyles";
+import { colors } from '../../styles/GlobalStyles'
 
 export const Container = styled.div`
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@ export const Container = styled.div`
     width: 100%;
     top: 0;
     left: 0;
-    content: "";
+    content: '';
   }
 
   ${TagContainer} {
@@ -35,7 +35,7 @@ export const Container = styled.div`
     height: 100%;
     justify-content: space-between;
   }
-`;
+`
 
 export const Infos = styled.div`
   padding: 16px;
@@ -56,4 +56,4 @@ export const Infos = styled.div`
       display: block;
     }
   }
-`;
+`

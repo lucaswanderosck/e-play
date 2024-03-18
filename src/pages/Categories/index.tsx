@@ -1,18 +1,18 @@
-import { ProductsList } from "../../components/ProducList";
+import { ProductsList } from '../../components/ProducList'
 import {
   useGetActionGamesQuery,
   useGetFightGamesQuery,
   useGetRpgGamesQuery,
   useGetSimulationGamesQuery,
   useGetSportsGamesQuery,
-} from "../../services/api";
+} from '../../services/api'
 
 export const Categories = () => {
-  const { data: gamesAction } = useGetActionGamesQuery();
-  const { data: gamesSports } = useGetSportsGamesQuery();
-  const { data: gamesFight } = useGetFightGamesQuery();
-  const { data: gamesRpg } = useGetRpgGamesQuery();
-  const { data: gamesFPS } = useGetSimulationGamesQuery();
+  const { data: gamesAction } = useGetActionGamesQuery()
+  const { data: gamesSports } = useGetSportsGamesQuery()
+  const { data: gamesFight } = useGetFightGamesQuery()
+  const { data: gamesRpg } = useGetRpgGamesQuery()
+  const { data: gamesFPS } = useGetSimulationGamesQuery()
 
   if (gamesAction && gamesSports && gamesFight && gamesRpg && gamesFPS) {
     return (
@@ -23,7 +23,7 @@ export const Categories = () => {
         <ProductsList games={gamesRpg} title="RPG" background="black" />
         <ProductsList games={gamesFPS} title="FPS" background="gray" />
       </>
-    );
+    )
   }
-  return <h4>...carregando</h4>;
-};
+  return <h4>...carregando</h4>
+}

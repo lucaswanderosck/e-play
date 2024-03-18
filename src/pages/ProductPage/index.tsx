@@ -1,18 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 
-import { Hero } from "../../components/Hero";
-import { Section } from "../../components/Section";
+import { Hero } from '../../components/Hero'
+import { Section } from '../../components/Section'
 
-import { Gallery } from "../../components/Gallery";
+import { Gallery } from '../../components/Gallery'
 
-import { useGetGameQuery } from "../../services/api";
+import { useGetGameQuery } from '../../services/api'
 
 export const ProductPage = () => {
-  const { id } = useParams();
-  const { data: game } = useGetGameQuery(id!);
+  const { id } = useParams()
+  const { data: game } = useGetGameQuery(id!)
 
   if (!game) {
-    return <h3>Carregando...</h3>;
+    return <h3>Carregando...</h3>
   }
 
   return (
@@ -31,8 +31,8 @@ export const ProductPage = () => {
           <b>Editora: </b>
           {game.details.publisher}
           <br />
-          <b>Idiomas: </b>O jogo oferece suporte a diversos idiomas, incluindo:{" "}
-          {game.details.languages.join(", ")}. As opções de áudio e legendas
+          <b>Idiomas: </b>O jogo oferece suporte a diversos idiomas, incluindo:{' '}
+          {game.details.languages.join(', ')}. As opções de áudio e legendas
           podem ser ajustadas nas configurações do jogo.
         </p>
       </Section>
@@ -42,5 +42,5 @@ export const ProductPage = () => {
         items={game.media.gallery}
       />
     </>
-  );
-};
+  )
+}

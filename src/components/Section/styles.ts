@@ -1,18 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { Container as CardContainer } from "../Product/styles";
+import { Container as CardContainer } from '../Product/styles'
 
-import { Props } from ".";
-import { colors } from "../../styles/GlobalStyles";
+import { Props } from '.'
+import { colors } from '../../styles/GlobalStyles'
 
-export const Container = styled.section<Omit<Props, "title" | "games">>`
+export const Container = styled.section<Omit<Props, 'title' | 'games'>>`
   padding: 32px 0;
   background-color: ${(props) =>
-    props.background === "black" ? colors.black : colors.gray};
+    props.background === 'black' ? colors.black : colors.gray};
 
   ${CardContainer} {
     background-color: ${(props) =>
-      props.background === "black" ? colors.gray : colors.black};
+      props.background === 'black' ? colors.gray : colors.black};
   }
 
   h2 {
@@ -26,4 +26,4 @@ export const Container = styled.section<Omit<Props, "title" | "games">>`
     line-height: 22px;
     max-width: 640px;
   }
-`;
+`

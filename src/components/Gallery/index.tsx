@@ -1,50 +1,51 @@
-import { useState } from "react";
+import { useState } from 'react'
 
-import { Action, Item, Items, Modal, ModalContent } from "./styles";
+import { Action, Item, Items, Modal, ModalContent } from './styles'
 
-import { LuPlayCircle, LuX, LuZoomIn } from "react-icons/lu";
-import { GalleryItem } from "../../pages/Home";
-import { Section } from "../Section";
+import { LuPlayCircle, LuX, LuZoomIn } from 'react-icons/lu'
+import { GalleryItem } from '../../pages/Home'
+import { Section } from '../Section'
 
 type Props = {
-  items: GalleryItem[];
-  defaultCover: string;
-  name: string;
-};
+  items: GalleryItem[]
+  defaultCover: string
+  name: string
+}
 
 interface ModalState extends GalleryItem {
-  isVisible: boolean;
+  isVisible: boolean
 }
 
 export const Gallery = ({ items, defaultCover, name }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
-    type: "image",
-    url: "",
-  });
+    type: 'image',
+    url: '',
+  })
 
   const getMediaCover = (media: GalleryItem) => {
-    if (media.type === "image") return media.url;
-    {
-      return defaultCover;
+    if (media.type === 'image') {
+      return media.url
     }
-  };
+
+    return defaultCover
+  }
 
   const getMediaIcon = (media: GalleryItem) => {
-    if (media.type === "image") {
-      return <LuZoomIn size={40} />;
+    if (media.type === 'image') {
+      return <LuZoomIn size={40} />
     }
 
-    return <LuPlayCircle size={40} />;
-  };
+    return <LuPlayCircle size={40} />
+  }
 
   const closeModal = () => {
     setModal({
       isVisible: false,
-      type: "image",
-      url: "",
-    });
-  };
+      type: 'image',
+      url: '',
+    })
+  }
 
   return (
     <>
@@ -58,7 +59,7 @@ export const Gallery = ({ items, defaultCover, name }: Props) => {
                   isVisible: true,
                   type: media.type,
                   url: media.url,
-                });
+                })
               }}
             >
               <img
@@ -70,13 +71,13 @@ export const Gallery = ({ items, defaultCover, name }: Props) => {
           ))}
         </Items>
       </Section>
-      <Modal className={modal.isVisible ? "active" : ""}>
+      <Modal className={modal.isVisible ? 'active' : ''}>
         <ModalContent className="container">
           <header>
             <h4>{name}</h4>
             <LuX size={40} onClick={closeModal} />
           </header>
-          {modal.type === "image" ? (
+          {modal.type === 'image' ? (
             <img src={modal.url} alt={name} />
           ) : (
             <iframe
@@ -90,5 +91,5 @@ export const Gallery = ({ items, defaultCover, name }: Props) => {
         <div className="overlay" onClick={closeModal}></div>
       </Modal>
     </>
-  );
-};
+  )
+}

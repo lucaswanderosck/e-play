@@ -1,6 +1,6 @@
-import "animate.css";
-import styled from "styled-components";
-import { colors } from "../../styles/GlobalStyles";
+import 'animate.css'
+import styled from 'styled-components'
+import { colors } from '../../styles/GlobalStyles'
 
 export const Action = styled.div`
   position: absolute;
@@ -17,13 +17,13 @@ export const Action = styled.div`
   > svg {
     color: ${colors.white};
   }
-`;
+`
 
 export const Items = styled.ul`
   display: flex;
   gap: 16px;
   margin-top: 2rem;
-`;
+`
 
 export const Item = styled.li`
   position: relative;
@@ -42,7 +42,7 @@ export const Item = styled.li`
       opacity: 1;
     }
   }
-`;
+`
 
 export const Modal = styled.div`
   position: fixed;
@@ -69,7 +69,7 @@ export const Modal = styled.div`
     height: 100%;
     background-color: rgba(0 0 0 / 0.73);
   }
-`;
+`
 
 export const ModalContent = styled.div`
   max-width: 960px;
@@ -103,4 +103,4 @@ export const ModalContent = styled.div`
     height: 480px;
     width: 100%;
   }
-`;
+`

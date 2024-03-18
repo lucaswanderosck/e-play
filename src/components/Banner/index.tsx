@@ -1,16 +1,14 @@
-import { Button } from "../Button";
-import { Tag } from "../Tag";
-import { Container, Prices, Title } from "./styles";
-
-import { formatPrice } from "../ProducList";
-
-import { useGetFeaturedGameQuery } from "../../services/api";
+import { useGetFeaturedGameQuery } from '../../services/api'
+import { formatPrice } from '../../utils/formatters'
+import { Button } from '../Button'
+import { Tag } from '../Tag'
+import { Container, Prices, Title } from './styles'
 
 export const Banner = () => {
-  const { data: game, isLoading } = useGetFeaturedGameQuery();
+  const { data: game, isLoading } = useGetFeaturedGameQuery()
 
   if (!game) {
-    return <h3>carregando...</h3>;
+    return <h3>carregando...</h3>
   }
 
   return (
@@ -33,5 +31,5 @@ export const Banner = () => {
         </Button>
       </div>
     </Container>
-  );
-};
+  )
+}
