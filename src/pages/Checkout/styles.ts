@@ -1,62 +1,79 @@
 import styled from 'styled-components'
-import { colors } from '../../styles/GlobalStyles'
-
-export const Container = styled.form``
-
-type RowProps = {
-  marginTop?: string
-}
-
-export const Row = styled.div<RowProps>`
-  display: flex;
-  column-gap: 24px;
-  align-items: flex-end;
-  margin-top: ${({ marginTop }) => marginTop || '0'};
-`
+import { breakpoints, colors } from '../../styles/GlobalStyles'
 
 type InputGroupProps = {
   maxWidth?: string
 }
 
+type RowProps = {
+  marginTop?: string
+}
+
+type TabButtonProps = {
+  isActive: boolean
+}
+
+export const Container = styled.div``
+
+export const Row = styled.div<RowProps>`
+  display: flex;
+  column-gap: 24px;
+  margin-top: ${(props) => props.marginTop || '0'};
+  align-items: flex-end;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+  }
+`
+
 export const InputGroup = styled.div<InputGroupProps>`
   flex: auto;
-  max-width: ${({ maxWidth }) => maxWidth || 'auto'};
+
+  max-width: ${(props) => props.maxWidth || 'auto'};
 
   label {
     font-size: 14px;
-    color: ${colors.white};
-    display: block;
     margin-bottom: 8px;
+    display: block;
   }
 
   input,
   select {
-    border: 1px solid ${colors.white};
     background-color: ${colors.white};
+    border: 1px solid ${colors.white};
     height: 32px;
     padding: 0 8px;
     width: 100%;
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-top: 16px;
   }
 `
 
-type TabButtonProps = {
-  active?: boolean
-}
-
 export const TabButton = styled.button<TabButtonProps>`
-  margin-bottom: 24px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  background-color: ${({ active }) => (active ? colors.green : colors.black)};
-  border: none;
   color: ${colors.white};
-  cursor: pointer;
+  background-color: ${(props) =>
+    props.isActive ? colors.green : colors.black};
   height: 32px;
-  border-radius: 8px;
+  border: none;
   margin-right: 16px;
   padding: 0 8px;
+  cursor: pointer;
 
-  svg {
+  img {
     margin-right: 8px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-top: 8px;
+    width: 100%;
   }
 `

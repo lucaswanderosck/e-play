@@ -13,6 +13,7 @@ export const Container = styled(Link)`
   text-decoration: none;
   color: ${colors.white};
   display: block;
+  height: 100%;
 
   ${TagContainer} {
     margin-right: 8px;

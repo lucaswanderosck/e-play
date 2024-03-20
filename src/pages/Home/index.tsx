@@ -1,6 +1,5 @@
 import { Banner } from '../../components/Banner'
 import { ProductsList } from '../../components/ProducList'
-
 import { useGetOnSaleGameQuery, useGetSoonQuery } from '../../services/api'
 
 export interface GalleryItem {
@@ -33,27 +32,27 @@ export type Game = {
 }
 
 export const Home = () => {
-  const { data: soonGames } = useGetSoonQuery()
-  const { data: onSaleGames } = useGetOnSaleGameQuery()
+  const { data: soonGames, isLoading: isLoadingSoon } = useGetSoonQuery()
+  const { data: onSaleGames, isLoading: isLoadingSale } =
+    useGetOnSaleGameQuery()
 
-  if (soonGames && onSaleGames) {
-    return (
-      <>
-        <Banner />
-        <ProductsList
-          games={onSaleGames}
-          title="Promoções"
-          background="gray"
-          id="on-sale"
-        />
-        <ProductsList
-          games={soonGames}
-          title="Em breve"
-          background="black"
-          id="coming-soon"
-        />
-      </>
-    )
-  }
-  return <h4>...carregando</h4>
+  return (
+    <>
+      <Banner />
+      <ProductsList
+        games={onSaleGames}
+        title="Promoções"
+        background="gray"
+        id="on-sale"
+        isLoading={isLoadingSale}
+      />
+      <ProductsList
+        games={soonGames}
+        title="Em breve"
+        background="black"
+        id="coming-soon"
+        isLoading={isLoadingSoon}
+      />
+    </>
+  )
 }

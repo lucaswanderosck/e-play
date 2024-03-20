@@ -1,8 +1,9 @@
 import { LuX } from 'react-icons/lu'
 import { useDispatch, useSelector } from 'react-redux'
-import { rootReducer } from '../../store'
+import { useNavigate } from 'react-router-dom'
+import { RootReducer } from '../../store'
 import { closeCart, removeItemtoCart } from '../../store/reducers/cart'
-import { formatPrice } from '../../utils/formatters'
+import { formatPriceToBRL, getTotalPrices } from '../../utils/formatters'
 import { Button } from '../Button'
 import { Tag } from '../Tag'
 import {
@@ -15,7 +16,8 @@ import {
 } from './styles'
 
 export const Cart = () => {
-  const { isOpen, items } = useSelector((state: rootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+  const navigate = useNavigate()
 
   const dispatch = useDispatch()
 
@@ -27,10 +29,9 @@ export const Cart = () => {
     dispatch(removeItemtoCart(id))
   }
 
-  const getTotalPrices = () => {
-    return items.reduce((acc, item) => {
-      return (acc += item.prices.current!)
-    }, 0)
+  const goToCheckout = () => {
+    navigate('/checkout')
+    closeCartHandler()
   }
 
   return (
@@ -45,7 +46,7 @@ export const Cart = () => {
                 <h3>{item.name}</h3>
                 <Tag>{item.details.category}</Tag>
                 <Tag>{item.details.system}</Tag>
-                <span>{formatPrice(item.prices.current)}</span>
+                <span>{formatPriceToBRL(item.prices.current)}</span>
               </div>
               <LuX onClick={() => removeToCart(item.id)} />
             </CartItem>
@@ -53,10 +54,14 @@ export const Cart = () => {
         </ul>
         <Quantity>{items.length} Jogos no carrinho</Quantity>
         <Prices>
-          Total de {formatPrice(getTotalPrices())}
+          Total de {formatPriceToBRL(getTotalPrices(items))}
           <span>Em até 6x sem juros</span>
         </Prices>
-        <Button title="Continuar para a compra" type="button">
+        <Button
+          title="Continuar para a compra"
+          type="button"
+          onClick={goToCheckout}
+        >
           Continuar com a compra
         </Button>
       </CartSideBar>

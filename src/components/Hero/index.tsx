@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { Game } from '../../pages/Home'
 import { addItemToCart, openCart } from '../../store/reducers/cart'
-import { formatPrice } from '../../utils/formatters'
+import { formatPriceToBRL } from '../../utils/formatters'
 import { Button } from '../Button'
 import { Tag } from '../Tag'
 import { Container, Infos } from './styles'
@@ -29,9 +29,11 @@ export const Hero = ({ game }: Props) => {
           <h2>{game.name}</h2>
           <p>
             {game.prices.discount && (
-              <span>De {formatPrice(game.prices.old)}</span>
+              <span>De {formatPriceToBRL(game.prices.old)}</span>
             )}
-            {game.prices.current && <>Por {formatPrice(game.prices.current)}</>}
+            {game.prices.current && (
+              <>Por {formatPriceToBRL(game.prices.current)}</>
+            )}
           </p>
           {game.prices.current && (
             <Button

@@ -1,14 +1,15 @@
 import { useGetFeaturedGameQuery } from '../../services/api'
-import { formatPrice } from '../../utils/formatters'
+import { formatPriceToBRL } from '../../utils/formatters'
 import { Button } from '../Button'
+import { Loader } from '../Loader'
 import { Tag } from '../Tag'
 import { Container, Prices, Title } from './styles'
 
 export const Banner = () => {
-  const { data: game, isLoading } = useGetFeaturedGameQuery()
+  const { data: game } = useGetFeaturedGameQuery()
 
   if (!game) {
-    return <h3>carregando...</h3>
+    return <Loader />
   }
 
   return (
@@ -18,8 +19,8 @@ export const Banner = () => {
         <div>
           <Title>{game?.name}</Title>
           <Prices>
-            De R$ <span>{formatPrice(game.prices.old)}</span> <br />
-            por apenas {formatPrice(game.prices.current)}
+            De R$ <span>{formatPriceToBRL(game.prices.old)}</span> <br />
+            por apenas {formatPriceToBRL(game.prices.current)}
           </Prices>
         </div>
         <Button

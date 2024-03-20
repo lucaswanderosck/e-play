@@ -1,10 +1,8 @@
 import { useState } from 'react'
-
-import { Action, Item, Items, Modal, ModalContent } from './styles'
-
 import { LuPlayCircle, LuX, LuZoomIn } from 'react-icons/lu'
 import { GalleryItem } from '../../pages/Home'
 import { Section } from '../Section'
+import { Action, Item, Items, Modal, ModalContent } from './styles'
 
 type Props = {
   items: GalleryItem[]
