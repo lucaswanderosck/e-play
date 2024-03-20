@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/GlobalStyles'
 
-export const Container = styled.div``
+export const Container = styled.form``
 
 type RowProps = {
   marginTop?: string
