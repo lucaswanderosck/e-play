@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux'
-import { Game } from '../../pages/Home'
 import { addItemToCart, openCart } from '../../store/reducers/cart'
 import { formatPriceToBRL } from '../../utils/formatters'
 import { Button } from '../Button'

@@ -9,9 +9,9 @@ import { Button } from '../../components/Button'
 import { Card } from '../../components/Card'
 import { usePurchaseMutation } from '../../services/api'
 import { RootReducer } from '../../store'
-import * as S from './styles'
-// import { clear } from '../../store/reducers/cart'
+import { clearCart } from '../../store/reducers/cart'
 import { formatPriceToBRL, getTotalPrices } from '../../utils/formatters'
+import * as S from './styles'
 
 type Installment = {
   quantity: number
@@ -89,7 +89,7 @@ export const Checkout = () => {
     }),
     onSubmit: (values) => {
       purchase({
-        biling: {
+        billing: {
           document: values.cpf,
           email: values.email,
           name: values.fullName,
@@ -152,7 +152,7 @@ export const Checkout = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      dispatch(clear())
+      dispatch(clearCart())
     }
   }, [isSuccess, dispatch])
 

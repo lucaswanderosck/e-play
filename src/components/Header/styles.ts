@@ -73,9 +73,10 @@ export const LinkItem = styled.li`
 
 export const CartButton = styled.span`
   display: flex;
+  align-items: center;
   cursor: pointer;
 
-  img {
+  svg {
     margin-left: 16px;
   }
 

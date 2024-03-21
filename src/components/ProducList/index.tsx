@@ -1,4 +1,3 @@
-import { Game } from '../../pages/Home'
 import { formatPriceToBRL } from '../../utils/formatters'
 import { Loader } from '../Loader'
 import { Product } from '../Product'

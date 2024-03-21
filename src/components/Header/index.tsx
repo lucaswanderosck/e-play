@@ -3,7 +3,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/logo.svg'
 import { RootReducer } from '../../store'
 import { openCart } from '../../store/reducers/cart'
 import * as S from './styles'
@@ -61,15 +61,8 @@ export const Header = () => {
           </nav>
         </div>
         <S.CartButton role="button" onClick={handleOpenCart}>
-          {items.length}
-          <span
-            style={{
-              marginRight: '16px',
-            }}
-          >
-            - produto(s)
-          </span>
-          <FaShoppingCart />
+          <span>{items.length} - produto(s)</span>
+          <FaShoppingCart size={22} />
         </S.CartButton>
       </S.HeaderRow>
       <S.NavMobile className={isMenuOpen ? 'is-open' : ''}>

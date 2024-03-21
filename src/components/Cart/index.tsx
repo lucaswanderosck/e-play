@@ -38,32 +38,41 @@ export const Cart = () => {
     <Container className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCartHandler} />
       <CartSideBar>
-        <ul>
-          {items.map((item) => (
-            <CartItem key={item.id}>
-              <img src={item.media.thumbnail} alt={item.name} />
-              <div>
-                <h3>{item.name}</h3>
-                <Tag>{item.details.category}</Tag>
-                <Tag>{item.details.system}</Tag>
-                <span>{formatPriceToBRL(item.prices.current)}</span>
-              </div>
-              <LuX onClick={() => removeToCart(item.id)} />
-            </CartItem>
-          ))}
-        </ul>
-        <Quantity>{items.length} Jogos no carrinho</Quantity>
-        <Prices>
-          Total de {formatPriceToBRL(getTotalPrices(items))}
-          <span>Em até 6x sem juros</span>
-        </Prices>
-        <Button
-          title="Continuar para a compra"
-          type="button"
-          onClick={goToCheckout}
-        >
-          Continuar com a compra
-        </Button>
+        {items.length > 0 ? (
+          <>
+            <ul>
+              {items.map((item) => (
+                <CartItem key={item.id}>
+                  <img src={item.media.thumbnail} alt={item.name} />
+                  <div>
+                    <h3>{item.name}</h3>
+                    <Tag>{item.details.category}</Tag>
+                    <Tag>{item.details.system}</Tag>
+                    <span>{formatPriceToBRL(item.prices.current)}</span>
+                  </div>
+                  <LuX onClick={() => removeToCart(item.id)} />
+                </CartItem>
+              ))}
+            </ul>
+            <Quantity>{items.length} Jogos no carrinho</Quantity>
+            <Prices>
+              Total de {formatPriceToBRL(getTotalPrices(items))}
+              <span>Em até 6x sem juros</span>
+            </Prices>
+            <Button
+              title="Continuar para a compra"
+              type="button"
+              onClick={goToCheckout}
+            >
+              Continuar com a compra
+            </Button>
+          </>
+        ) : (
+          <h4>
+            Seu carrinho está vazio, adicione pelo menos um produto para
+            continuar para a compra
+          </h4>
+        )}
       </CartSideBar>
     </Container>
   )
